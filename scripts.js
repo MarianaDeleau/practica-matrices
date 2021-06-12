@@ -67,6 +67,118 @@
 
 
 
-//Ejercicio 4: Generar grilla
+//Ejercicio 4: Generar grilla(70)
 //Definí una función generarGrilla que tome por parámetro un número entero filas, un número entero columnas y un array de valores items, y devuelva una matriz de filas filas y columnas columnas, donde cada ítem de la matriz es un ítem aleatorio de items.
 
+// const generarGrilla =(filas, columnas, items) => {
+
+// const matriz=[];
+// const fila=[]
+
+//     for(let i=0; i<filas; i++){
+//         matriz.push(fila)
+
+//     }
+
+//     for(let i=0; i<columnas; i++){
+//         fila.push(items[Math.floor(Math.random()*items.length)])
+
+//     }
+       
+//  console.log(matriz)
+// }
+
+//  generarGrilla(2, 3, [1, 2]) 
+
+// // [1, 1, 2], 
+// // [2, 1, 1]
+
+//generarGrilla(3, 3, ['a', 'b', 'c'])
+
+//     // ['c', 'c', 'a'], 
+//     // ['c', 'a', 'a'], 
+//     // ['b', 'a', 'b']
+
+
+//Ejercicio 5: Generar matriz escalonada
+//Definí una función generarMatrizEscalonada que reciba como argumento un número entero filas y devuelva un array 2d con la cantidad de filas filas, donde la primera fila tiene 1 columna, la segunda tiene 2, la tercera 3, y así sucesivamente. Los ítems de la matriz deben ser 0.
+
+
+
+// const generarMatrizEscalonada =(columnas) => {
+
+//     let matriz=[];
+           
+//         for(let i=1; i<=columnas; i++) {
+
+//         // console.log("i: ", i);
+// 		// este for se va a recorrer para los siguientes valores de i
+// 		// 1 en la primera vuelta
+// 		// 2 en la segunda
+// 		// 3 en la tercera
+        
+//             let fila=[];
+
+//             for(let j=0; j < i; j++) {
+
+//             // console.log("j: ", j);
+// 			// este for se va a recorrer "i" veces!!!
+
+//             fila.push(0)     
+        
+//             }
+//         matriz.push(fila) 
+//         }
+//         console.log(matriz)
+        
+//     };
+
+//generarMatrizEscalonada(3) 
+
+// [
+//   [0], 
+//   [0, 0], 
+//   [0, 0, 0]
+// ] 
+//generarMatrizEscalonada(5)  
+// [
+//   [0], 
+//   [0, 0], 
+//   [0, 0, 0], 
+//   [0, 0, 0, 0], 
+//   [0, 0, 0, 0, 0]
+// ] 
+
+
+// Respuesta
+// [
+//      [0],
+//      [ 0, 0 ],
+//      [ 0, 0, 0 ],
+//      [ 0, 0, 0, 0 ]
+// ]
+
+// Aux
+//[ 0, 0, 0, 0 ]
+
+//Ejercicio 6: Obtener fila más larga
+//Definí una función obtenerFilaMasLarga que reciba como argumento un array 2d matriz y devuelva el array (fila) que tenga mayor longitud. Si hay varios de igual longitud, debe devolver el primero de ellos.
+
+// const obtenerFilaMasLarga = (array) => {
+
+//     let arrayLargo= [];
+
+//         for(let i=0; i<array.length; i++){
+
+//         if (array[i].length > arrayLargo.length) {
+            
+//             arrayLargo=array[i]
+      
+//         }
+//   console.log(arrayLargo) 
+//     }
+
+// }
+
+// //obtenerFilaMasLarga([[1, 4], [3, 7, 5], [1]])
+// obtenerFilaMasLarga([[1], [3, 7], [6, 8]])
