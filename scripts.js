@@ -161,7 +161,7 @@
 // Aux
 //[ 0, 0, 0, 0 ]
 
-//Ejercicio 6: Obtener fila más larga
+//Ejercicio 6: Obtener fila más larga (60)
 //Definí una función obtenerFilaMasLarga que reciba como argumento un array 2d matriz y devuelva el array (fila) que tenga mayor longitud. Si hay varios de igual longitud, debe devolver el primero de ellos.
 
 // const obtenerFilaMasLarga = (array) => {
@@ -182,3 +182,63 @@
 
 // //obtenerFilaMasLarga([[1, 4], [3, 7, 5], [1]])
 // obtenerFilaMasLarga([[1], [3, 7], [6, 8]])
+
+//Ejercicio 7: Obtener cantidad (10)
+//Definí una función obtenerCantidad que tome un valor cualquiera item y una matriz items y devuelva la cantidad de veces que item se encuentra dentro de items.
+
+// const obtenerCantidad = (item, matriz) => {
+// let cantidad=[]
+
+//     for(let array of matriz) {
+        
+//         for(let elemento of array){
+
+//             if(elemento===item){
+
+//                 cantidad.push(elemento);
+//             }
+
+//         }
+        
+//     }
+//         console.log(cantidad.length)
+
+//     }
+// obtenerCantidad('🍎', [
+//     ['🍎', '🍏', '🍌', '🍌'],
+//     ['🍌', '🍎'],
+//     ['🍎', '🍏', '🍌'],
+//     ['🍏', '🍌', '🍎', '🍌'],
+//   ])
+//  // 4
+
+
+//Ejercicio 8: Convertir en matriz
+//Definí una función convertirEnMatriz que reciba como argumentos un número entero columnas y un array array y devuelva una matriz con los items de array y la cantidad de columnas columnas por fila. La última fila puede quedarse como menos columnas de las indicadas si no hay más ítems que agregar.
+
+//DEVUELVE LA CANTIDAD DE ARRAYS, LA CANTIDAD DE ELEMENTOS ---- PERO NO EL SOBRANTE ----
+// const convertirEnMatriz = (columnas, array) => {
+
+//     let matriz=[];
+//      let fila=[];
+
+//     for(let i =0; i<array.length; i++){
+//         //console.log('i:' , i)
+//         if(fila.length<columnas){
+//             //console.log(fila.length)
+//             fila=array.splice(0, columnas)
+           
+//             matriz.push(fila)
+//             fila=[];
+//         } 
+
+//     } 
+//     console.log(matriz)
+//     }
+
+// convertirEnMatriz(2, [1, 2, 3, 4])
+//[[1, 2], [3, 4]]
+//convertirEnMatriz(3, [1, 2, 3, 4, 5, 6, 7])
+//[[1, 2, 3], [4, 5, 6], [7]]
+//convertirEnMatriz(4, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
+//[[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11]]
