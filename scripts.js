@@ -242,3 +242,30 @@
 //[[1, 2, 3], [4, 5, 6], [7]]
 //convertirEnMatriz(4, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
 //[[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11]]
+
+
+//Ejercicio 9: Consultar tabla
+//Definí la función consultarTablaque tome por parámetro un número id, un string columna, y una matriz tabla y que retorne el valor del dato de la columna dada para el registro con el id indicado.
+
+  const tabla = [
+    ['id', 'nombre', 'edad', 'email'],
+    [1, 'Ada', 33, 'ada@gmail.com'],
+    [2, 'Grace', 45, 'grace@gmail.com'],
+  ]
+
+
+const consultarTabla = (id, columna, tabla) => {
+
+    const indiceColumna=tabla[0].indexOf(columna); 
+    //console.log(indiceColumna)
+
+    for(let i = 1; i<tabla.length; i++){
+
+   console.log(tabla[id][indiceColumna])
+
+    }
+
+}
+
+consultarTabla(2, 'nombre', tabla)
+consultarTabla(1, 'email', tabla)
