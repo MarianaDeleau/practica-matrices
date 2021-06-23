@@ -133,7 +133,7 @@
         
 //     };
 
-//generarMatrizEscalonada(3) 
+// //generarMatrizEscalonada(3) 
 
 // [
 //   [0], 
@@ -247,25 +247,217 @@
 //Ejercicio 9: Consultar tabla
 //Definí la función consultarTablaque tome por parámetro un número id, un string columna, y una matriz tabla y que retorne el valor del dato de la columna dada para el registro con el id indicado.
 
-  const tabla = [
-    ['id', 'nombre', 'edad', 'email'],
-    [1, 'Ada', 33, 'ada@gmail.com'],
-    [2, 'Grace', 45, 'grace@gmail.com'],
-  ]
+//   const tabla = [
+//     ['id', 'nombre', 'edad', 'email'],
+//     [1, 'Ada', 33, 'ada@gmail.com'],
+//     [2, 'Grace', 45, 'grace@gmail.com'],
+//   ]
 
 
-const consultarTabla = (id, columna, tabla) => {
+// const consultarTabla = (id, columna, tabla) => {
 
-    const indiceColumna=tabla[0].indexOf(columna); 
-    //console.log(indiceColumna)
+//     const indiceColumna=tabla[0].indexOf(columna); 
+//     //console.log(indiceColumna)
 
-    for(let i = 1; i<tabla.length; i++){
+//     for(let i = 1; i<tabla.length; i++){
 
-   console.log(tabla[id][indiceColumna])
+//    console.log(tabla[id][indiceColumna])
 
-    }
+//     }
+
+// }
+
+// consultarTabla(2, 'nombre', tabla)
+// consultarTabla(1, 'email', tabla)
+
+//Ejercicio 10: Tiene bloque horizontal
+//Definí una función tieneBloqueHorizontal que reciba como argumento un array 2d matriz y devuelva si dicha matriz tiene un bloque horizontal de 3 o más ítems consecutivos idénticos.
+
+//PRIMERA VERSION
+// const tieneBloqueHorizontal = (matriz) => {
+
+// let itemIgual="";
+// const vecesBloque= 3;
+// let contadorVeces=0 
+
+// for(const array of matriz){
+
+//     for(const item of array){
+
+//         if(item===itemIgual){
+//             contadorVeces++;
+//         }else{
+//             contadorVeces=1
+
+//         } 
+
+//         if(contadorVeces===vecesBloque){
+//             alert(true)
+//         } else{
+//             alert(false)
+//         }
+       
+//         itemIgual=item;
+//         console.log(item)
+//     }
+
+// }
+
+// }
+
+//VERSION MEJORADA PARA 3 O MAS
+
+
+const tieneBloqueHorizontal = (matriz) => {
+
+  
+  for(let i = 0; i < matriz.length; i++) {
+
+      const array = matriz[i]; 
+            let anterior; 
+            let encontradas=0;
+            let veces=3 
+      for(let j = 0; j < array.length; j++) {
+                 
+          if(array[j] === anterior) {
+
+            encontradas++
+
+            } else {
+              encontradas=1
+            }
+
+            if(encontradas>=veces){
+                     
+                alert(true);
+                
+            } else {
+
+              alert(false)
+            }
+            
+            anterior=array[j]
+
+      }
+          
+  }
 
 }
 
-consultarTabla(2, 'nombre', tabla)
-consultarTabla(1, 'email', tabla)
+
+// tieneBloqueHorizontal([
+//     [1, 2, 3],
+//     [1, 2, 3],
+//     [1, 2, 3],
+//   ])
+//   false
+  
+  //  tieneBloqueHorizontal([
+  //   [1, 2, 3, 4],
+  //   [1, 2, 2, 2],
+  //   [1, 2, 4, 5],
+  // ])
+  //true
+
+ // tieneBloqueHorizontal([
+  //   [1, 2, 3, 4],
+  //   [1, 2, 4, 2],
+  //   [1, 2, 4, 5],
+  //   [1, 2, 4, 5, 5, 5],
+  //   [1, 2, 4, 5],
+  // ]) 
+  // true
+
+
+  // tieneBloqueHorizontal([
+  //   [1, 2, 3, 4, 1, 2],
+  //   [1, 2, 2, 2, 2, 1],
+  //   [4, 4, 4, 4, 4, 4],
+  // ])
+   // true
+
+//Ejercicio 11: Tiene bloque vertical
+//Definí una función tieneBloqueVertical que tome una matriz y devuelva si la misma tiene un bloque vertical  de 3 o más ítems consecutivos idénticos .
+
+
+//   const tieneBloqueVertical = (matriz) => {
+
+//     let itemIgual="";
+//     const vecesBloque= 3;
+//     let contadorVeces=0 
+    
+//     for(let i=0; i<matriz.length; i++){
+    
+
+//       // [4, 2, 3]  -  [1, 5, 3] - [1, 2, 3]
+//       //      i0           i1            i2
+
+//       //console.log(matriz[0])
+//       // console.log('i:', i)
+//         for(let j=0; j<matriz.length; j++){
+
+//           console.log('i:', i)
+//           console.log('j:', j)
+//       //i0  1= 4,     2,     3
+//           //   j0    j1     j2
+
+//       //i1  2. 1,     5,     3
+//          //   j0    j1     j2
+
+//       //i2 3.  1,     2,     3
+//          //   j0    j1     j2      
+
+//         }
+
+        
+//           // for(let x=1; x<matriz.length; x++){
+//           //   console.log('i:', i)
+//           //   console.log('j:', j)
+//           //   console.log('x:', x)
+         
+
+//           // }
+
+
+//           // console.log(matriz[0][0])
+//           // console.log(matriz[1][0])
+//           // console.log(matriz[2][0])
+//           //console.log((matriz[0][1]))
+//             // console.log('i:', i)
+//             // console.log('j:', j)
+
+//             if(matriz[i][j]===matriz[i][j]){
+//                 //alert(true)
+
+//                 //console.log(matriz[i][j])
+//             }else{
+//                // alert(false)
+             
+    
+            
+//          }
+    
+//     }
+// }
+    
+
+//     tieneBloqueVertical([
+//         [4, 2, 3],
+//         [1, 5, 3],
+//         [1, 2, 3],
+//       ])
+//       //true
+      
+//     //    tieneBloqueVertical([
+//     //     [1, 2, 3, 4],
+//     //     [7, 2, 9, 2],
+    //     [1, 8, 4, 5],
+    //   ]) 
+      //false
+      
+
+
+      
+//     if(matriz[0][0]===matriz[1][0] && matriz[1][0]===matriz[2][0] || matriz[0][1]===matriz[1][1] && matriz[1][1]===matriz[2][1] || matriz[0][2]===matriz[1][2] && matriz[1][2]===matriz[2][2] )
+//     //for(let j=0; j<matriz[i].length; j++){
+// alert(true)
