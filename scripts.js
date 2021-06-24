@@ -308,41 +308,41 @@
 //VERSION MEJORADA PARA 3 O MAS
 
 
-const tieneBloqueHorizontal = (matriz) => {
+// const tieneBloqueHorizontal = (matriz) => {
 
   
-  for(let i = 0; i < matriz.length; i++) {
+//   for(let i = 0; i < matriz.length; i++) {
 
-      const array = matriz[i]; 
-            let anterior; 
-            let encontradas=0;
-            let veces=3 
-      for(let j = 0; j < array.length; j++) {
+//       const array = matriz[i]; 
+//             let anterior; 
+//             let encontradas=0;
+//             let veces=3 
+//       for(let j = 0; j < array.length; j++) {
                  
-          if(array[j] === anterior) {
+//           if(array[j] === anterior) {
 
-            encontradas++
+//             encontradas++
 
-            } else {
-              encontradas=1
-            }
+//             } else {
+//               encontradas=1
+//             }
 
-            if(encontradas>=veces){
+//             if(encontradas>=veces){
                      
-                alert(true);
+//                 alert(true);
                 
-            } else {
+//             } else {
 
-              alert(false)
-            }
-            
-            anterior=array[j]
+//               alert(false)
+//             }
 
-      }
+//             anterior=array[j]
+
+//       }
           
-  }
+//   }
 
-}
+// }
 
 
 // tieneBloqueHorizontal([
@@ -378,81 +378,147 @@ const tieneBloqueHorizontal = (matriz) => {
 
 //Ejercicio 11: Tiene bloque vertical
 //Definí una función tieneBloqueVertical que tome una matriz y devuelva si la misma tiene un bloque vertical  de 3 o más ítems consecutivos idénticos .
-
-
-//   const tieneBloqueVertical = (matriz) => {
-
-//     let itemIgual="";
-//     const vecesBloque= 3;
-//     let contadorVeces=0 
-    
-//     for(let i=0; i<matriz.length; i++){
     
 
-//       // [4, 2, 3]  -  [1, 5, 3] - [1, 2, 3]
-//       //      i0           i1            i2
+// const tieneBloqueVertical = (matriz) => {
 
-//       //console.log(matriz[0])
-//       // console.log('i:', i)
-//         for(let j=0; j<matriz.length; j++){
+//       for(const posicion in matriz[0]){      
+//             let anterior; 
+//             let encontradas=0;
+//             const veces=3
 
-//           console.log('i:', i)
-//           console.log('j:', j)
-//       //i0  1= 4,     2,     3
-//           //   j0    j1     j2
-
-//       //i1  2. 1,     5,     3
-//          //   j0    j1     j2
-
-//       //i2 3.  1,     2,     3
-//          //   j0    j1     j2      
-
-//         }
-
-        
-//           // for(let x=1; x<matriz.length; x++){
-//           //   console.log('i:', i)
-//           //   console.log('j:', j)
-//           //   console.log('x:', x)
-         
-
-//           // }
-
-
-//           // console.log(matriz[0][0])
-//           // console.log(matriz[1][0])
-//           // console.log(matriz[2][0])
-//           //console.log((matriz[0][1]))
-//             // console.log('i:', i)
-//             // console.log('j:', j)
-
-//             if(matriz[i][j]===matriz[i][j]){
-//                 //alert(true)
-
-//                 //console.log(matriz[i][j])
-//             }else{
-//                // alert(false)
-             
-    
+//           for(const array in matriz){
+      
             
-//          }
-    
-//     }
-// }
-    
+//           if(anterior==matriz[array][posicion]) {
 
-//     tieneBloqueVertical([
-//         [4, 2, 3],
-//         [1, 5, 3],
-//         [1, 2, 3],
-//       ])
+//             encontradas++
+
+//             } else {
+//               encontradas=1
+//             }
+
+//             if(encontradas>=veces){
+                     
+//                 alert(true);
+                
+//             } else {
+
+//               alert(false)
+//             }
+           
+//             anterior=matriz[array][posicion]
+            
+//       }
+          
+//   }
+
+// }
+
+//const tieneBloqueVertical = (matriz) => {
+
+  
+  //const itemsPorArray = matriz[0].length; 
+  
+
+  //console.log(array)
+//   //for(let j = 0; j < itemsPorArray; j++) {
+//       for(const posicion in matriz[0]){      
+//             let anterior; 
+//             let encontradas=0;
+//             const veces=3
+
+//           for(const array in matriz){
+//       //for(let i = 0; i < matriz.length; i++) {
+//         //console.log(matriz.length)
+//             //const array = matriz[i];
+              
+            
+//           if(anterior==matriz[array][posicion]) {
+
+//             encontradas++
+
+//             } else {
+//               encontradas=1
+//             }
+
+
+//             if(encontradas>=veces){
+                     
+//                 alert(true);
+                
+//             } else {
+
+//               alert(false)
+//             }
+//             //console.log(array[i][j])
+//             anterior=matriz[array][posicion]
+            
+// //console.log(encontradas)
+//       }
+          
+//   }
+
+// }
+
+const tieneBloqueVertical = (matriz) => {
+
+  const itemsPorArray = matriz[0].length; 
+
+        for(let j = 0; j < itemsPorArray; j++) {      
+
+              let anterior; 
+              let encontradas=0;
+              const veces=3
+  
+            for(let i = 0; i < matriz.length; i++){
+
+                    if(anterior===matriz[i][j]) {
+        
+                    encontradas++
+        
+                    } else {
+                        encontradas=1
+                    }
+        
+        
+                    if(encontradas>=veces){
+                            
+                        alert(true);
+                        
+                    } else {
+        
+                        alert(false)
+                    }
+                    
+                    anterior=matriz[i][j]
+        }
+        
+    }
+
+}
+
+
+// tieneBloqueVertical([
+//   [4, 2, 3],
+//   [1, 5, 3],
+//   [1, 2, 3],
+// ])
+
+    // tieneBloqueVertical([
+    //     [4, 2, 3],
+    //     [1, 5, 3],
+    //     [1, 2, 3],
+    //     [1, 2, 3],
+    //     [1, 2, 3],
+    //   ])
 //       //true
       
-//     //    tieneBloqueVertical([
-//     //     [1, 2, 3, 4],
-//     //     [7, 2, 9, 2],
-    //     [1, 8, 4, 5],
-    //   ]) 
+      //  tieneBloqueVertical([
+      //   [1, 2, 3, 4],
+      //   [7, 2, 9, 4],
+      //   [1, 8, 4, 4],
+      // ]) 
       //false
       
 
